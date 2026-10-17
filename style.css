@@ -1,8 +1,16 @@
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
-  padding-top: 5rem;
+  padding-top: 5rem; /* place pour la pilule */
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #111;
 }
 
+/* ===== Menu pilule ===== */
 .pill {
   position: fixed;
   top: 1rem;
@@ -69,13 +77,13 @@ body {
   padding: 0.6rem 1rem;
   color: #fff;
   text-decoration: none;
-  font-size: 1rem;
   white-space: nowrap;
   border-radius: 999px;
 }
 
 .pill-links a:hover { background: rgba(255, 255, 255, 0.15); }
 
+/* ===== Pages ===== */
 .page {
   max-width: 1100px;
   margin: 0 auto;
@@ -87,6 +95,7 @@ body {
   text-align: center;
 }
 
+/* ===== Cartes de projets ===== */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -113,6 +122,7 @@ body {
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
+  background: #ddd;
 }
 
 .project-body {
@@ -145,4 +155,3 @@ body {
 }
 
 .project-link:hover { background: #333; }
-
