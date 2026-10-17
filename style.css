@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding-top: 5rem;
+}
+
 .pill {
   position: fixed;
   top: 1rem;
@@ -74,7 +79,7 @@
 .page {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 5rem 1rem 3rem; /* l'espace en haut évite que la pilule cache le titre */
+  padding: 0 1rem 3rem;
 }
 
 .page h1 {
@@ -140,3 +145,4 @@
 }
 
 .project-link:hover { background: #333; }
+
