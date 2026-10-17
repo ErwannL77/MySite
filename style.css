@@ -111,6 +111,12 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.project-card.reverse { flex-direction: row-reverse; }
+
+@media (max-width: 700px) {
+  .project-card.reverse { flex-direction: column; }
+}
+
 .project-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -147,9 +153,6 @@ body {
   .project-body { padding: 1.2rem; }
 }
 
-@media (min-width: 701px) {
-  .project-card:nth-child(even) { flex-direction: row-reverse; }
-}
 .project-body h2 {
   margin: 0;
   font-size: 1.2rem;

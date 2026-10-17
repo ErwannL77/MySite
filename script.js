@@ -6,7 +6,6 @@ toggle.addEventListener("click", () => {
   toggle.setAttribute("aria-expanded", isOpen);
 });
 
-// Referme la pilule quand on clique en dehors
 document.addEventListener("click", (e) => {
   if (!pill.contains(e.target)) {
     pill.classList.remove("open");
