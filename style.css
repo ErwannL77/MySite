@@ -252,16 +252,9 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 130vh; /* plus haut que l'écran pour avoir de la marge de mouvement */
+  height: 130vh;
   z-index: -1;
   background: url("images/Dante.jpg") center / cover no-repeat;
   transform: translateY(calc(var(--scroll) * -30vh));
   will-change: transform;
-}
-
-.bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(244, 244, 244, 0.75);
 }
