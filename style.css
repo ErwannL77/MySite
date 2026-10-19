@@ -252,28 +252,36 @@ body {
 :root { --scroll: 0; }
 
 .fond {
-  --zoom: 1.6; 
+  --voile: 0.35;  
+  --zoom: 1.6;    
+  --cadrage: center;  
+
   position: fixed;
   inset: 0;
   z-index: -1;
   overflow: hidden;
+  background: #f4f4f4;
 }
 
-.fond::before {
-  content: "";
+.fond img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(var(--zoom) * 100%);
-  background: url("images/Dante.png") center / cover no-repeat;
-  transform: translateY(calc(var(--scroll) * (1 - 1 / var(--zoom)) * -100%));
-  will-change: transform;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--cadrage);
 }
 
 .fond::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(244, 244, 244, 0.35);
+  background: rgba(244, 244, 244, var(--voile));
+}
+
+.fond.defile img {
+  height: calc(var(--zoom) * 100%);
+  transform: translateY(calc(var(--scroll) * (1 - 1 / var(--zoom)) * -100%));
+  will-change: transform;
 }

@@ -16,14 +16,16 @@ document.addEventListener("click", (e) => {
 
 /*image qui scroll la */
 
-const root = document.documentElement;
+if (document.querySelector(".fond.defile")) {
+  const root = document.documentElement;
 
-function updateScroll() {
-  const max = root.scrollHeight - window.innerHeight;
-  const progress = max > 0 ? window.scrollY / max : 0;
-  root.style.setProperty("--scroll", progress.toFixed(4));
+  const updateScroll = () => {
+    const max = root.scrollHeight - window.innerHeight;
+    const progress = max > 0 ? window.scrollY / max : 0;
+    root.style.setProperty("--scroll", progress.toFixed(4));
+  };
+
+  window.addEventListener("scroll", updateScroll, { passive: true });
+  window.addEventListener("resize", updateScroll);
+  updateScroll();
 }
-
-window.addEventListener("scroll", updateScroll, { passive: true });
-window.addEventListener("resize", updateScroll);
-updateScroll();
