@@ -252,16 +252,15 @@ body {
 :root { --scroll: 0; }
 
 .bg {
-  --img-h: 50dvh; 
+  --zoom: 2.5; /* l'image fait 2,5 fois la hauteur de l'écran */
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--img-h);
+  inset: 0;
   z-index: -1;
-  background: url("images/Dante.png") center / cover no-repeat;
-  transform: translateY(calc(var(--scroll) * (100dvh - var(--img-h))));
-  will-change: transform;
+  background-color: #f4f4f4;
+  background-image: url("images/Dante.png");
+  background-repeat: no-repeat;
+  background-size: auto calc(var(--zoom) * 100%);
+  background-position: 50% calc(var(--scroll) * 100%);
 }
 
 .bg::after {
@@ -270,4 +269,3 @@ body {
   inset: 0;
   background: rgba(244, 244, 244, 0.35);
 }
-
