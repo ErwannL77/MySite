@@ -209,3 +209,37 @@ body {
   font-size: 0.8rem;
   border-radius: 999px;
 }
+
+.text-box {
+  width: 100%;
+  margin: 0 0 1.5rem;
+  padding: 1.5rem 2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* Évite les marges en trop au début et à la fin du rectangle */
+.text-box > :first-child { margin-top: 0; }
+.text-box > :last-child { margin-bottom: 0; }
+
+/* Variantes optionnelles */
+.text-box.dark {
+  background: #111;
+  color: #fff;
+}
+
+.text-box.outline {
+  background: transparent;
+  border: 2px solid #111;
+  box-shadow: none;
+}
+
+.text-box.accent {
+  border-left: 6px solid #111;
+  border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+  .text-box { padding: 1.2rem; }
+}
