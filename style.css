@@ -13,8 +13,11 @@ h2 { font-size: var(--text-section); }
 p, li, a { font-size: var(--text-body); }
 
 h1 {
-  display: inline-block; 
+  display: block;
+  width: fit-content;
+  margin: 0 auto 2rem;
   font-size: var(--text-header);
+  text-align: center;
   transition: transform 0.3s ease;
 }
 
@@ -113,7 +116,6 @@ body {
   text-align: center;
 }
 
-/* ===== Cartes de projets ===== */
 .projects {
   display: flex;
   flex-direction: column;
@@ -219,11 +221,9 @@ body {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
 
-/* Évite les marges en trop au début et à la fin du rectangle */
 .text-box > :first-child { margin-top: 0; }
 .text-box > :last-child { margin-bottom: 0; }
 
-/* Variantes optionnelles */
 .text-box.dark {
   background: #111;
   color: #fff;
