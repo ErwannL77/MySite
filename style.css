@@ -251,19 +251,30 @@ body {
 
 :root { --scroll: 0; }
 
-.bg {
-  --zoom: 2.5; /* l'image fait 2,5 fois la hauteur de l'écran */
+.fond {
+  --zoom: 1.6; /* l'image est 1,6 fois plus haute que l'écran */
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-color: #f4f4f4;
-  background-image: url("images/Dante.png");
-  background-repeat: no-repeat;
-  background-size: auto calc(var(--zoom) * 100%);
-  background-position: 50% calc(var(--scroll) * 100%);
+  overflow: hidden;
+  background: #f4f4f4;
 }
 
-.bg::after {
+/* La couche image : plus haute que l'écran, elle glisse vers le haut */
+.fond::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(var(--zoom) * 100%);
+  background: url("images/Dante.png") center / cover no-repeat;
+  transform: translateY(calc(var(--scroll) * (1 - 1 / var(--zoom)) * -100%));
+  will-change: transform;
+}
+
+/* Voile pour garder le texte lisible */
+.fond::after {
   content: "";
   position: absolute;
   inset: 0;
