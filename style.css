@@ -15,7 +15,6 @@ p, li, a { font-size: var(--text-body); }
 h1 {
   display: block;
   width: fit-content;
-  margin: 0 auto 2rem;
   font-size: var(--text-header);
   text-align: center;
   transition: transform 0.3s ease;
