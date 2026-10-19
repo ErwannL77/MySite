@@ -252,15 +252,13 @@ body {
 :root { --scroll: 0; }
 
 .fond {
-  --zoom: 1.6; /* l'image est 1,6 fois plus haute que l'écran */
+  --zoom: 1.6; 
   position: fixed;
   inset: 0;
   z-index: -1;
   overflow: hidden;
-  background: #f4f4f4;
 }
 
-/* La couche image : plus haute que l'écran, elle glisse vers le haut */
 .fond::before {
   content: "";
   position: absolute;
@@ -273,7 +271,6 @@ body {
   will-change: transform;
 }
 
-/* Voile pour garder le texte lisible */
 .fond::after {
   content: "";
   position: absolute;
