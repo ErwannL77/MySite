@@ -246,15 +246,14 @@ body {
 :root { --scroll: 0; }
 
 .bg {
-  --img-h: 50dvh;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--img-h);
+  height: 120vh;
   z-index: -1;
   background: url("images/Dante.png") center / cover no-repeat;
-  transform: translateY(calc(var(--scroll) * (100dvh - var(--img-h))));
+  transform: translateY(calc(var(--scroll) * -30vh));
   will-change: transform;
 }
 
