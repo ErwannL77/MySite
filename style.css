@@ -1,5 +1,25 @@
 * { box-sizing: border-box; }
 
+:root {
+  --text-header: clamp(2.2rem, 6vw, 3.5rem);  /* gros texte : l'entête */
+  --text-section: clamp(1.3rem, 3vw, 1.8rem); /* texte moyen : les parties */
+  --text-body: 1rem;                          /* petit texte : le reste */
+}
+
+body { font-size: var(--text-body); }
+
+h1 { font-size: var(--text-header); }
+h2 { font-size: var(--text-section); }
+p, li, a { font-size: var(--text-body); }
+
+h1 {
+  display: inline-block; 
+  font-size: var(--text-header);
+  transition: transform 0.3s ease;
+}
+
+h1:hover { transform: scale(1.06); }
+
 body {
   margin: 0;
   padding-top: 5rem; 
@@ -153,10 +173,7 @@ body {
   .project-body { padding: 1.2rem; }
 }
 
-.project-body h2 {
-  margin: 0;
-  font-size: 1.2rem;
-}
+.project-body h2 {margin: 0;}
 
 .project-body p {
   flex: 1;
@@ -170,7 +187,7 @@ body {
   background: #111;
   color: #fff;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: var(--text-body);
   border-radius: 999px;
 }
 
