@@ -260,16 +260,6 @@ body {
   color: #3a2a2a;           
 }
 
-.text-box.image > img {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;          
-  image-rendering: pixelated;    
-}
-
 .text-box.image > img:first-child {
   position: absolute;
   inset: 0;
@@ -278,10 +268,6 @@ body {
   height: 100%;
   object-fit: contain;
   image-rendering: pixelated;
-}
-
-@supports (height: 100dvh) {
-  .text-box.image.full { --hauteur: 100dvh; }
 }
 
 .text-box:not(.dark):not(.outline):not(.image) {
@@ -316,11 +302,29 @@ body {
   transform: rotate(-3deg);
 }
 
-.note-content p {
+.note-text {
   flex: 1;
   min-width: 0;
-  margin: 0;
-  font-size: 0.9rem;
+}
+
+.note-text h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem; 
+  line-height: 1.2;
+}
+
+.note-text p {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.note-text p:last-child { margin-bottom: 0; }
+
+@media (max-width: 480px) {
+  .text-box.image { padding: 2.2rem 1.2rem 1.5rem; }
+  .note-text h2 { font-size: 1rem; }
+  .note-text p { font-size: 0.78rem; }
 }
 
 :root { --scroll: 0; }
