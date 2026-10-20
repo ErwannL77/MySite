@@ -247,6 +247,27 @@ body {
   color: #fff;
 }
 
+.text-box.image.full {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: -5rem 0 2rem;   
+  padding: 6rem 1.5rem 3rem;
+  border-radius: 0;
+  box-shadow: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.text-box.image.full p {
+  max-width: 60ch;        
+}
+
 .text-box.image > img {
   position: absolute;
   inset: 0;
