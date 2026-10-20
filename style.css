@@ -239,33 +239,19 @@ body {
 
 .text-box.image {
   position: relative;
-  isolation: isolate;  
+  isolation: isolate;
   overflow: hidden;
   width: 100%;
-  padding: 3rem 2.5rem;  
-  background: #111;
-  color: #fff;
-}
-
-.text-box.image.full {
-  width: 100%;
   max-width: none;
-  min-height: 100vh;
-  min-height: 100dvh;
-  margin: -5rem 0 2rem;   
-  padding: 6rem 1.5rem 3rem;
-  border-radius: 0;
-  box-shadow: none;
-
+  height: var(--hauteur, 60vh); 
+  padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.text-box.image.full p {
-  max-width: 60ch;        
+  background: #111;
+  color: #fff;
 }
 
 .text-box.image > img {
@@ -274,18 +260,21 @@ body {
   z-index: -1;
   width: 100%;
   height: 100%;
-  object-fit: cover;  
+  object-fit: cover;
+  object-position: var(--cadrage, center);
 }
 
-.text-box.image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: rgba(0, 0, 0, var(--voile, 0.45));
+.text-box.image.full {
+  --hauteur: 100vh;
+  margin: -5rem 0 2rem;  
+  padding-top: 6rem;   
+  border-radius: 0;
+  box-shadow: none;
 }
 
-.text-box.image > img + * { margin-top: 0; }
+@supports (height: 100dvh) {
+  .text-box.image.full { --hauteur: 100dvh; }
+}
 
 .text-box:not(.dark):not(.outline):not(.image) {
   background: rgba(255, 255, 255, 0.7);
