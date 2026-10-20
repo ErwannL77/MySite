@@ -14,6 +14,33 @@ document.addEventListener("click", (e) => {
   }
 });
 
+/*Le switch de langage */
+const langButtons = document.querySelectorAll("[data-lang]");
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-en]").forEach((el) => {
+    // Au premier passage, on garde le texte français d'origine
+    if (el.dataset.fr === undefined) el.dataset.fr = el.textContent;
+    el.textContent = lang === "en" ? el.dataset.en : el.dataset.fr;
+  });
+
+  langButtons.forEach((btn) => {
+    btn.setAttribute("aria-pressed", btn.dataset.lang === lang);
+  });
+
+  try { localStorage.setItem("lang", lang); } catch (e) {}
+}
+
+langButtons.forEach((btn) => {
+  btn.addEventListener("click", () => setLang(btn.dataset.lang));
+});
+
+let savedLang = "en";
+try { savedLang = localStorage.getItem("lang") || "en"; } catch (e) {}
+setLang(savedLang);
+
 /*image qui scroll la */
 
 if (document.querySelector(".fond.defile")) {

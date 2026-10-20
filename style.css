@@ -285,3 +285,30 @@ body {
   transform: translateY(calc(var(--scroll) * (1 - 1 / var(--zoom)) * -100%));
   will-change: transform;
 }
+
+.lang-switch {
+  display: flex;
+  gap: 0.4rem;
+  margin: 0.4rem 0.5rem 0;
+  padding: 0.7rem 0.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lang-switch button {
+  flex: 1;
+  padding: 0.35rem 0;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  color: #fff;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.lang-switch button:hover { background: rgba(255, 255, 255, 0.15); }
+
+.lang-switch button[aria-pressed="true"] {
+  background: #fff;
+  color: #111;
+}
