@@ -241,6 +241,7 @@ body {
   position: relative;
   isolation: isolate;  
   overflow: hidden;
+  width: 100%;
   padding: 3rem 2.5rem;  
   background: #111;
   color: #fff;
@@ -265,7 +266,7 @@ body {
 
 .text-box.image > img + * { margin-top: 0; }
 
-.text-box:not(.dark):not(.outline) {
+.text-box:not(.dark):not(.outline):not(.image) {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
