@@ -202,11 +202,21 @@ body {
 
 .tags li {
   padding: 0.25rem 0.8rem;
-  background: #eee;
-  color: #333;
+  background: var(--tag-bg, #eee);   
+  color: var(--tag-text, #333);    
   font-size: 0.8rem;
   border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
+
+.tags li:hover {
+  --tag-bg: #111;
+  --tag-text: #fff;
+  transform: translateY(-2px);
+}
+
+.tags li.platform { --tag-bg: #001bc7; --tag-text: #000000; }
+.tags li.use   { --tag-bg: #01bc7e; --tag-text: #000000; }
 
 .text-box {
   width: fit-content; 
