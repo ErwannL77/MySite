@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Générateur de QR code</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 480px; margin: 2rem auto; padding: 0 1rem; }
+    input, button { width: 100%; margin: 0.3rem 0; padding: 0.6rem 1rem; font: inherit; }
+    #apercu { max-width: 100%; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  <h1>Générateur de QR code</h1>
+  <input id="url" type="url" placeholder="https://erwannloury.space" value="https://">
+  <button id="generer">Générer</button>
+
+  <img id="apercu" alt="QR code" hidden>
+  <a id="telecharger" download="qrcode.png" hidden>Télécharger en PNG</a>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <script>
+    const apercu = document.getElementById("apercu");
+    const lien = document.getElementById("telecharger");
+
+    document.getElementById("generer").addEventListener("click", async () => {
+      const url = document.getElementById("url").value.trim();
+      if (!url) return;
+
+      const dataUrl = await QRCode.toDataURL(url, {
+        width: 1024,                    
+        margin: 4,                   
+        errorCorrectionLevel: "M",
+        color: { dark: "#000000", light: "#ffffff" }
+      });
+
+      apercu.src = dataUrl;
+      apercu.hidden = false;
+      lien.href = dataUrl;
+      lien.hidden = false;
+    });
+  </script>
+</body>
+</html>
