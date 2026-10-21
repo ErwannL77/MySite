@@ -21,9 +21,8 @@ function setLang(lang) {
   document.documentElement.lang = lang;
 
   document.querySelectorAll("[data-en]").forEach((el) => {
-    // Au premier passage, on garde le texte français d'origine
-    if (el.dataset.fr === undefined) el.dataset.fr = el.textContent;
-    el.textContent = lang === "en" ? el.dataset.en : el.dataset.fr;
+    if (el.dataset.fr === undefined) el.dataset.fr = el.innerHTML;
+    el.innerHTML = lang === "en" ? el.dataset.en : el.dataset.fr;
   });
 
   langButtons.forEach((btn) => {
